@@ -122,6 +122,13 @@ canvas {
     display: none;
 }
 
+.snoopy-start {
+    height: 150px; /* Define o tamanho fixo */
+    width: auto;   /* Mantém a proporção */
+    margin: 10px 0; /* Um pouco de espaço em cima e embaixo */
+    display: block;
+}
+
 @media (min-width: 768px) {
     #game-container {
         height: 90vh; /* No PC não ocupa 100% da altura */
