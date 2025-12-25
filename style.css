@@ -155,23 +155,39 @@ canvas {
         display: none !important;
     }
 
-    /* Mostra o botão mobile */
+    /* AJUSTE DO CHÃO: 
+       Diminuímos a altura para deixar um espaço embaixo (safe area) 
+       para os botões do sistema (voltar, home, etc) não taparem o jogo. */
+    #game-container {
+        height: calc(100% - 80px); /* Tira 80px da altura total */
+        margin-bottom: 20px;       /* Dá uma margem visual */
+        border-width: 2px;         /* Borda mais fina no celular */
+    }
+
+    /* AJUSTE DO BOTÃO:
+       Agora ele fica fixo no canto inferior DIREITO do container */
     .mobile-only {
-        display: block;
+        display: flex;             /* Centraliza o ícone dentro da bola */
+        justify-content: center;
+        align-items: center;
         position: absolute;
-        bottom: 30px; /* Fica na parte de baixo da tela */
-        right: 30px;  /* No canto direito */
+        
+        /* Posição no canto direito inferior */
+        bottom: 20px; 
+        right: 20px;
+        
         width: 70px;
         height: 70px;
-        border-radius: 50%; /* Redondo */
-        background-color: rgba(255, 71, 126, 0.8); /* Rosa translúcido */
+        border-radius: 50%;
+        background-color: rgba(255, 71, 126, 0.9);
         color: white;
         font-size: 2rem;
         border: 2px solid #fff;
-        padding: 0;
+        padding-top: 5px; /* Ajuste fino para centralizar a setinha */
         z-index: 20;
-        pointer-events: auto; /* Garante que recebe o clique */
-        touch-action: manipulation; /* Melhora a resposta ao toque */
+        pointer-events: auto;
+        touch-action: manipulation;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     .mobile-only:active {
