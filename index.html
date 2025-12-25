@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Snootris</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="start-screen" class="overlay">
+            <h1>Snootris</h1>
+            <div class="snoopy-deco">🐶</div>
+            <p>Complete linhas e cuidado com o Snoopy!</p>
+            <button id="btn-start">Jogar Agora</button>
+        </div>
+
+        <div id="game-over-screen" class="overlay hidden">
+            <h1>Fim de Jogo!</h1>
+            <img src="img/snoopy_happy.png" alt="Snoopy Feliz" class="snoopy-end">
+            <p>Sua Pontuação:</p>
+            <h2 id="final-score">0</h2>
+            <button id="btn-restart">Tentar de Novo</button>
+        </div>
+
+        <div id="hud" class="hidden">
+            <div class="score-box">
+                <span>Pontos:</span>
+                <span id="score">0</span>
+            </div>
+            <button id="btn-rotate-desktop" class="desktop-only">↻ Girar</button>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <script src="js/constants.js"></script>
+    <script src="js/pieces.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/snoopy.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
