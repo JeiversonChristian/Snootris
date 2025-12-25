@@ -143,3 +143,39 @@ canvas {
         padding: 5px 15px;
     }
 }
+
+/* Botão de Cair (Mobile) */
+.mobile-only {
+    display: none; /* Escondido por padrão no PC */
+}
+
+@media (max-width: 768px) {
+    /* Esconde botões de desktop no celular */
+    .desktop-only {
+        display: none !important;
+    }
+
+    /* Mostra o botão mobile */
+    .mobile-only {
+        display: block;
+        position: absolute;
+        bottom: 30px; /* Fica na parte de baixo da tela */
+        right: 30px;  /* No canto direito */
+        width: 70px;
+        height: 70px;
+        border-radius: 50%; /* Redondo */
+        background-color: rgba(255, 71, 126, 0.8); /* Rosa translúcido */
+        color: white;
+        font-size: 2rem;
+        border: 2px solid #fff;
+        padding: 0;
+        z-index: 20;
+        pointer-events: auto; /* Garante que recebe o clique */
+        touch-action: manipulation; /* Melhora a resposta ao toque */
+    }
+
+    .mobile-only:active {
+        background-color: var(--dark-pink);
+        transform: scale(0.95);
+    }
+}
