@@ -165,33 +165,39 @@ canvas {
     }
 
     /* AJUSTE DO BOTÃO:
-       Agora ele fica fixo no canto inferior DIREITO do container */
+       Agora ele fica fixo no canto inferior DIREITO do container 
+       e mais TRANSPARENTE para ver o jogo atrás */
     .mobile-only {
-        display: flex;             /* Centraliza o ícone dentro da bola */
+        display: flex;
         justify-content: center;
         align-items: center;
         position: absolute;
         
-        /* Posição no canto direito inferior */
+        /* Posição */
         bottom: 20px; 
         right: 20px;
         
         width: 70px;
         height: 70px;
         border-radius: 50%;
-        background-color: rgba(255, 71, 126, 0.9);
-        color: white;
+        
+        /* MUDANÇA AQUI: de 0.9 para 0.3 na transparência */
+        background-color: rgba(255, 71, 126, 0.3);
+        
+        color: rgba(255, 255, 255, 0.8); /* Texto também um pouco transparente */
         font-size: 2rem;
-        border: 2px solid #fff;
-        padding-top: 5px; /* Ajuste fino para centralizar a setinha */
+        border: 2px solid rgba(255, 255, 255, 0.5); /* Borda semi-transparente */
+        
+        padding-top: 5px;
         z-index: 20;
         pointer-events: auto;
         touch-action: manipulation;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        box-shadow: none; /* Removi a sombra para ficar mais limpo */
+        backdrop-filter: blur(2px); /* Efeito de vidro fosco (opcional, fica bonito) */
     }
 
     .mobile-only:active {
-        background-color: var(--dark-pink);
+        background-color: rgba(255, 71, 126, 0.6); /* Fica um pouco mais visível ao tocar */
         transform: scale(0.95);
     }
 }

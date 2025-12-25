@@ -122,13 +122,16 @@ export class Game {
         }
     }
 
+    // Drop Rápido (Arrastar para baixo ou Botão Mobile)
     hardDrop() {
         if (this.gameStatus !== 'PLAYING') return;
         
+        // Move para baixo até encontrar obstáculo
         while (this.board.valid({ ...this.piece, y: this.piece.y + 1 })) {
             this.piece.y += 1;
-            this.score += 2; 
+            // REMOVIDO: this.score += 2; (Não ganha mais pontos por acelerar)
         }
+        // Força o travamento imediato
         this.drop();
         this.updateScoreDisplay();
     }
