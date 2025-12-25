@@ -1,7 +1,8 @@
+// constants.js
 // Configurações Globais do Snootris
 
 // Cores das Peças (Padrão Tetris + Rosa Especial)
-const COLORS = [
+export const COLORS = [
     null,
     '#FF0D72', // T (Magenta/Roxo)
     '#0DC2FF', // I (Ciano)
@@ -14,12 +15,12 @@ const COLORS = [
 ];
 
 // Configurações do Jogo
-const COLS = 10;
-const ROWS = 20;
-const BLOCK_SIZE = 30; // Tamanho base, será recalculado no resize
+export const COLS = 10;
+export const ROWS = 20;
+export const BLOCK_SIZE = 30; // Tamanho base, será recalculado no resize
 
 // Pontuação
-const POINTS = {
+export const POINTS = {
     SINGLE: 100,
     DOUBLE: 300,
     TRIPLE: 500,
@@ -28,7 +29,7 @@ const POINTS = {
 };
 
 // Teclas
-const KEY = {
+export const KEY = {
     LEFT: 37,
     RIGHT: 39,
     DOWN: 40,
